@@ -1,0 +1,80 @@
+body{
+    padding-bottom: 20%;
+}
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color: rgb(235, 229, 229);
+    padding: 8px 12px;
+}
+.menu{
+    display:flex;
+    list-style:none;
+    padding-left:0;
+}
+.menu li{
+    padding:8px 12px;
+}
+.title_name{
+    text-decoration:none;
+    color: black; 
+    font-size: 2.5rem;
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+form{
+    text-align: center;
+}
+table, th, td {
+    margin: auto;
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 50%;
+    background-color:blanchedalmond;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+}
+.table_title{
+    font-size:1.7rem;
+}
+.form{
+    border: 1px solid white;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 15px;
+}
+.forma{
+    width:100%;
+}
+input{
+    border: 1px solid black;
+    padding: 6.5px;
+    border-radius: 10px;
+    
+}
+button{
+    font-size:0.8rem;
+    font-weight: bolder;
+}
+.button{
+    border: 1px solid black;
+    padding: 10px;
+    width: 50%;
+    border-radius: 10px;
+    background-color:coral;
+}
+.table-botton{
+    border: 1px solid black;
+    padding: 5px;
+    width: 80%;
+    border-radius: 10px;
+}
+.signin{
+    text-align: center;
+}

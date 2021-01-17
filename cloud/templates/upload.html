@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h2>Upload file</h2>
+    <div class='form'>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class='forma'>
+                <input  type='file' id="ex_file" name='file' style='width:45%' multiple/>
+                <button class='button' type="submit">Upload file</button>  
+            </div>
+            
+        </form>
+    </div>
+    
+
+    <table class="table mb-0">
+        <thead>
+        <tr class="row1">
+            <th class="table_title">Download</th>
+            <th class="table_title">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for file in files %}
+            <tr>
+                <td>
+                    <a href="../api/download/{{file.pk}}" class="btn btn-primary btn-sm" target="_blank">
+                        {{ file }}
+                    </a>
+                </td>
+                <td>
+                    <form method="post" action="{% url 'delete_file' file.pk %}">
+                        {% csrf_token %}
+                        <button class="table-botton" type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            
+        {% endfor %}
+        </tbody>
+    </table>
+
+   
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h2>Signup page</h2>
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="signup">
+        <a>ID:</a>
+        <input name="username" type="text"><br>
+        <a>PW:</a>
+        <input name="password" type="password"><br>
+        <a>Email:</a>
+        <input name="email" type="text"><br>
+        <a>First name:</a>
+        <input name="firstname" type="text"><br>
+        <a>Last name:</a>
+        <input name="lastname" type="text">
+        <br>
+        <input type="submit" value="register">
+    </div>
+    
+
+</form>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>{% block title %}Document{% endblock %}</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="logo">
+            <a class="title_name" href="{% url 'index' %}">BENSON</a>
+        </ul>
+        <ul class="menu">
+
+            {% if user.is_authenticated %}
+            <li><a>Welcome! {{ user.username}} </a></li>
+            {% else %}
+            <li><a>Hello </a></li>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'upload_image' %}">Up/Down</a></li>
+            {% else %}
+
+            {% endif %}
+            <li><a href="{% url 'image_list' %}">List</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'user:login' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'user:login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% block content %}
+    {% if user.is_authenticated %}
+        
+        <h1>Welcome! {{ user.username}}!</h1>
+        
+    {% else %}
+        <h1>Welcome! Home page!</h1>
+        <h1>Use upload file after login!</h1>
+    {% endif %}
+    {% endblock %}
+
+
+    
+</body>
+</html>

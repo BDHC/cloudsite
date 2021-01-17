@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h2>Thank you come again {{ user.username}}!</h2>
+<div style="text-align: center">
+    <a href="{% url 'user:logout' %}">logout</a>
+</div>
+
+{% else %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <h1>LOGIN PAGE!</h1>
+    <a>ID:</a>&nbsp&nbsp
+    <input name="username" type="text">
+    <br><a>PW:</a>
+    <input name="password" type="password">
+    <br>
+    <input type="submit" value="login">
+</form>
+<div style="text-align: center">
+    <a href="{% url 'user:signup' %}">SignUp!</a> 
+</div>
+
+{% endif %}
+
+{% endblock %}
